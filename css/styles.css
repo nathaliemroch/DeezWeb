@@ -55,7 +55,19 @@ nav ul {
 
 /* Accueil */
 
+#welcome {
+    background-color: #e7e7e7;
+    padding: 50px 100px;
+    border-radius: 10px;
+}
 
+#welcome h2 {
+    font-size: 30px;
+}
+
+#welcome p {
+    padding: 10px 0;
+}
 
 /* Page Recherche */
 #search h2 {
@@ -73,9 +85,14 @@ nav ul {
 #search input {
     width: 70%;
     height: 60px;
-    border: none;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
     font-size: 24px;
-    background-color: rgb(231, 231, 231);
+    border-color: #e7e7e7;
+    border-radius: 10px;
+}
+#search select {
+    flex: 1;
+    margin-left: 10px;
+    border: none;
+    font-size: 16px;
+    background-color: #f0f0f0;
 }
