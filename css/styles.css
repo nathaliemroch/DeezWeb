@@ -6,3 +6,43 @@
     margin: 0;
     font-family: 'Lato', sans-serif;
 }
+body {
+    background-color: white;
+}
+ul {
+    list-style: none;
+}
+nav {
+    background-color: #541419;
+    padding: 0 100px;
+    box-shadow: 0 10px 0 #586BA4;
+}
+nav h1 {
+    display: inline-block;
+    margin-right: 40px;
+    color: #D32A2A;
+    font-size: 30px;
+}
+nav * {
+    color: #D58936;
+}
+nav a {
+    display: block;
+    padding:  40px;
+    text-decoration: none;
+    transition: all 0.2s;
+}
+nav a.active {
+    font-weight: bold;
+    color: #FFC76D;
+    background-color: #D1603D;
+    box-shadow: 0 10px 0 #7C1710;
+}
+nav a:hover {
+    background-color :#D1603D;
+    color: white;
+    transition: all 0.2s;
+}
+nav ul {
+    display: inline-flex;
+}
