@@ -22,6 +22,7 @@ nav h1 {
     margin-right: 40px;
     color: #D32A2A;
     font-size: 30px;
+    text-decoration: none;
 }
 nav * {
     color: #D58936;
@@ -45,4 +46,36 @@ nav a:hover {
 }
 nav ul {
     display: inline-flex;
+}
+
+#welcome, #random, #search {
+    width: 80%;
+    margin: 60px auto;
+}
+
+/* Accueil */
+
+
+
+/* Page Recherche */
+#search h2 {
+    margin: 15px 0;
+}
+#search .search-container {
+    display: flex;
+}
+#search .search-container * {
+    height: 64px;
+    display: block;
+    padding: 20px;
+    transition: all 0.2s;
+}
+#search input {
+    width: 70%;
+    height: 60px;
+    border: none;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
+    font-size: 24px;
+    background-color: rgb(231, 231, 231);
 }
