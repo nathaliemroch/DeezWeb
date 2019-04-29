@@ -31,7 +31,6 @@ nav a {
     display: block;
     padding:  40px;
     text-decoration: none;
-    transition: all 0.2s;
 }
 nav a.active {
     font-weight: bold;
@@ -42,7 +41,6 @@ nav a.active {
 nav a:hover {
     background-color :#D1603D;
     color: white;
-    transition: all 0.2s;
 }
 nav ul {
     display: inline-flex;
@@ -80,7 +78,6 @@ nav ul {
     height: 64px;
     display: block;
     padding: 20px;
-    transition: all 0.2s;
 }
 #search input {
     width: 70%;
