@@ -11,7 +11,7 @@ const searchValue = search.val();
 //Selection
 const selectOption = tri.find('option:selected');
 const selectValue = selectOption.val();
-console.log(selectValue);
+
 
 const album = 
     $.ajax({
@@ -30,7 +30,22 @@ const album =
 
                 //Changement du texte
                 $(".btn-fav").click(function()
-                {  $(this).html('Retirer des favoris'); 
+                {$(this).html(function(i, text){
+                    return text === "Ajouter aux favoris" ? "Retirer des favoris" : "Ajouter aux favoris";
+                })
+
+                // $("#.btn-fav").click(function() { 
+                //     if ($(this).text() == "Ajouter aux favoris") { 
+                //         $(this).text("Retirer des favoris"); 
+                //     } else { 
+                //         $(this).text("Ajouter aux favoris"); 
+                //     }; 
+                
+
+                // $(".btn-fav").toggle(function() {
+                //     $(this).text("Retirer des favoris");
+                // }, function() {
+                //     $(this).text("Ajouter aux favoris");
             });
         }
     );
