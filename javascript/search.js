@@ -17,15 +17,9 @@ const album =
     $.ajax({
         url : 'https://api.deezer.com/search?q='+searchValue+'&order='+selectValue+'&output=jsonp',
         dataType : 'jsonp'
-    }).done(function(musiques) {
-            
-        console.log(musiques);
-
+    }).done(function(music) {
         document.querySelector('#results').innerHTML = 
-
-        musiques.data.map(
-
-           
+        music.data.map(
             m =>
                 '<div class="card"><p class="album">'
                 + '<img width="300px" src="'+ m.album.cover_big+ '"/>' + '<br>'
@@ -39,11 +33,7 @@ const album =
                 {  $(this).html('Retirer des favoris'); 
             });
         }
-
-    
     );
-
-
 });
 
 
