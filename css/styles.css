@@ -95,6 +95,11 @@ nav ul {
     height: 60px;
 }
 
+.btn {
+    height: 30px;
+    border-radius: 5px;
+}
+
 #results{
     display: flex;
     flex-direction: row;
