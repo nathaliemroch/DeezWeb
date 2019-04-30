@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
@@ -18,17 +19,23 @@
     </nav>
     <div id="search">
         <h2>Rechercher sur Deezer</h2>
-        <div class="search-container">
-            <input type="text" name="q" >
-            <select name="order">
-                <option value="">Trier les résultats par ... </option>
+            <form id="searchForm">
+            <!-- <label for="search">/label> -->
+            <input type="text" type="text" aria-label="Search" id="search" placeholder="Recherche un son" >
+            <!-- <label for="search"></label> -->
+            <select name="order" id="tri">
+                <option value="trier">Trier les résultats par ... </option>
                 <option value="ALBUM_ASC">  Album   </option>
                 <option value="ARTIST_ASC"> Artiste </option>
                 <option value="TRACK_ASC">  Titre   </option>
                 <option value="RATING">     Note    </option>
                 <option value="RANKING">    Rang    </option>
             </select> 
-        </div>
-    </div>  
+            <button type="submit" class="bouton">Rechercher</button>
+    </div>
+    <div id="results"></div>
+    
+    <script src="http://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="./javascript/search.js"></script>
 </body>
 </html>
