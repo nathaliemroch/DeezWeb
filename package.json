@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/nathaliemroch/DeezWeb/issues"
   },
-  "homepage": "https://github.com/nathaliemroch/DeezWeb#readme"
+  "homepage": "https://github.com/nathaliemroch/DeezWeb#readme",
+  "dependencies": {
+    "jquery": "^3.4.0"
+  }
 }
