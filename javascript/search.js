@@ -27,16 +27,16 @@ const album =
 
            
             m =>
-                '<div class="main"><p class="album">'
-                + '<img width="200px" src="'+ m.album.cover_big+ '"/>' + '<br>'
-                + m.artist.name + ' : <br>' 
+                '<div class="card"><p class="album">'
+                + '<img width="300px" src="'+ m.album.cover_big+ '"/>' + '<br>'
+                + m.artist.name + ' : ' 
                 + m.album.title + '</p> <br> <p class="preview">' 
-                + '<audio controls src="' + m.preview +'" ></audio></p> <br> <button id="0" class="btn-favoris"><i class="fas fa-heart"></i>  <span class="text-favoris">Ajouter au favoris</span></button></div>'
+                + '<audio controls src="' + m.preview +'" ></audio></p> <br> <button class="btn-fav"><i class="fas fa-heart"></i> <span class="fav">Ajouter aux favoris</span></button></div>'
                 ).join("<br>");
 
                 //Changement du texte
-                $(".btn-favoris").click(function()
-                {  $('.text-favoris').html(' Retirer du favoris'); 
+                $(".btn-fav").click(function()
+                {  $(this).html('Retirer des favoris'); 
             });
         }
 

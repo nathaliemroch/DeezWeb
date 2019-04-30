@@ -2,8 +2,7 @@
 
 * {
     box-sizing: border-box;
-    padding: 0;
-    margin: 0;
+    margin: 0 auto;
     font-family: 'Lato', sans-serif;
 }
 body {
@@ -102,3 +101,29 @@ nav ul {
     justify-content: center;
     align-items: center;
 }
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+    padding: 0 0 70px;
+}
+
+.btn-fav{
+    width: 59%;
+    padding: 15px;
+    border: 1px solid #D22929;
+    border-radius: 5px;
+    color:#D22929;
+}
+
+.btn-fav .fa-heart{
+    color: #D22929;
+}
+
+.album {
+    text-align: center;
+}
+
