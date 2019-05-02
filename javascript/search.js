@@ -18,37 +18,58 @@ const album =
         url : 'https://api.deezer.com/search?q='+searchValue+'&order='+selectValue+'&output=jsonp',
         dataType : 'jsonp'
     }).done(function(music) {
-        document.querySelector('#results').innerHTML = 
-        music.data.map(
-            m =>
-                '<div class="card"><p class="album">'
-                + '<img width="300px" src="'+ m.album.cover_big+ '"/>' + '<br>'
-                + m.artist.name + ' : ' 
-                + m.album.title + '</p> <br> <p class="preview">' 
-                + '<audio controls src="' + m.preview +'" ></audio></p> <br> <button class="btn-fav"><i class="fas fa-heart"></i> <span class="fav">Ajouter aux favoris</span></button></div>'
-                ).join("<br>");
 
-                //Changement du texte
-                $(".btn-fav").click(function()
-                {$(this).html(function(i, text){
-                    return text === "Ajouter aux favoris" ? "Retirer des favoris" : "Ajouter aux favoris";
-                })
+        for (let i = 0; i < music.data.length ; i++) {
+            let m = music.data[i];
 
-                // $("#.btn-fav").click(function() { 
-                //     if ($(this).text() == "Ajouter aux favoris") { 
-                //         $(this).text("Retirer des favoris"); 
-                //     } else { 
-                //         $(this).text("Ajouter aux favoris"); 
-                //     }; 
-                
+            let $div = $('<div class="card">' +
+                            '<p class="album">' +
+                                '<img width="300px" src="'+ m.album.cover_big+ '"/>' + '<br>' +
+                                m.artist.name + ' : ' +
+                                m.album.title +
+                            '</p><br>' +
+                            '<p class="preview">' +
+                                '<audio controls src="' + m.preview +'" ></audio>' +
+                            '</p> <br> <button class="btn-fav"><i class="fas fa-heart"></i> <span>Ajouter aux favoris</span></button>' +
+                        '</div>');
 
-                // $(".btn-fav").toggle(function() {
-                //     $(this).text("Retirer des favoris");
-                // }, function() {
-                //     $(this).text("Ajouter aux favoris");
-            });
+            if (itsFavorite(m.id)) {
+                setButtonIsNotFavAnymore( $div.find('.btn-fav') );
+            } else {
+                setButtonIsFav( $div.find('.btn-fav') );
+            }
+
+            $div.data('m', m);
+            
+            $('#results').append(
+                $div
+            );
         }
-    );
+
+    });
 });
 
 
+
+$('#results').on("click",".btn-fav",function(){
+    let m = $(this).parents('.card').data('m');
+
+    if (itsFavorite(m.id)) {
+        removeFav(m.id);
+        setButtonIsFav( $(this) );
+    } else {
+        addFav(m);
+        setButtonIsNotFavAnymore( $(this) );
+    }
+});
+
+
+function setButtonIsFav($button) {
+    $button.removeClass('btn-is-fav').find('i.fas').removeClass('fa-heart-broken').addClass('fa-heart');
+    $button.find('span').text('Ajouter aux favoris');
+}
+
+function setButtonIsNotFavAnymore($button) {
+    $button.addClass('btn-is-fav').find('i.fas').removeClass('fa-heart').addClass('fa-heart-broken');
+    $button.find('span').text('Retirer des favoris');
+}

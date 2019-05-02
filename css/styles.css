@@ -80,7 +80,7 @@ nav ul {
     padding: 20px;
 }
 #search input {
-    width: 70%;
+    width: 60%;
     height: 60px;
     font-size: 24px;
     border-color: #e7e7e7;
@@ -96,8 +96,9 @@ nav ul {
 }
 
 .btn {
-    height: 30px;
+    height: 60px;
     border-radius: 5px;
+    width: 10%;
 }
 
 #results{
@@ -129,7 +130,30 @@ nav ul {
     color: #D22929;
 }
 
+.btn-is-fav {
+    background-color: #f00;
+    color: #fff;
+}
+
 .album {
     text-align: center;
 }
 
+/* 
+@media screen and (max-width: 980px) { 
+    .nav {
+        display: inline-flex;
+    }
+
+    
+ }
+@media screen and (max-width: 736px) { 
+    .nav {
+        display: inline-flex;
+    }
+
+    
+ }
+@media all and (max-width: 480px) { 
+    
+ } */
