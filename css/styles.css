@@ -48,6 +48,8 @@ nav ul {
 #welcome, #random, #search {
     width: 80%;
     margin: 60px auto;
+    text-align: center;
+}
 }
 
 /* Accueil */
@@ -115,7 +117,11 @@ nav ul {
     justify-content: center;
     align-items: center;
     width: 500px;
-    padding: 0 0 70px;
+    border: 1px #e7e7e7 solid;
+    margin: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .btn-fav{
@@ -140,6 +146,9 @@ nav ul {
 }
 
 /* Favoris */
+#mesfav {
+    margin: 30px;
+}
 
 .song{
     border: 1px #e7e7e7 solid;
@@ -148,6 +157,7 @@ nav ul {
     border-radius: 8px;
     padding: 10px;
     text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 
 .title {
@@ -165,6 +175,16 @@ nav ul {
     padding-top: 4px;
     padding-bottom: 10px;
     font-size: 12px;
+}
+
+/* Random */
+
+.random-song {
+    text-align: center;
+}
+
+audio {
+    padding-bottom: 10px;
 }
 
 

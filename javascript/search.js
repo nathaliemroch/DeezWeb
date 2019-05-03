@@ -23,9 +23,8 @@ const album =
             let m = music.data[i];
 
             let $div = $('<div class="card">' +
-                            '<p class="album">' +
-                                '<img width="300px" src="'+ m.album.cover_big+ '"/>' + '<br>' +
-                                m.artist.name + ' : ' +
+                                '<img width="300px" src="'+ m.album.cover_big + '"/>' + '<br>' +
+                                '<p class="album">' + m.artist.name + ' : ' +
                                 m.title + '<br>' +
                                 m.album.title +
                             '</p><br>' +

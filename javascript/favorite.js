@@ -2,11 +2,15 @@ $(document).ready(function () {
     let fav = JSON.parse(localStorage.getItem('deezweb:FavSongs')) || [];
     for (let m of fav) {
       $(`<div class="song">
-        <img class="cover" src="${m.album.cover_big}">
+        <img class="cover" src="${m.album.cover}">
         <p class="title">${m.title}</p>
         <p class="artiste">${m.artist.name}</p>
         <p class="album">${m.album.title}</p>
-        <audio controls src="${m.preview}"></audio></div>`
+        <audio controls src="${m.preview}"></audio>
+        <button type="submit" class="btn-fav">
+            <i class="fas fa-heart-broken"></i>
+                <span class="text-favoris">Retirer des favoris</span>
+            </button></div>`
         ).data('m', m).appendTo('#favorites');
     }
     
@@ -21,7 +25,6 @@ $(document).ready(function () {
           i--;
         }
       }
-  
       localStorage.setItem('deezweb:FavSongs', JSON.stringify(fav));     
     });
 });
