@@ -34,9 +34,9 @@ const album =
                         '</div>');
 
             if (itsFavorite(m.id)) {
-                setButtonIsNotFavAnymore( $div.find('.btn-fav') );
+                setButtonToNotFavAnymore( $div.find('.btn-fav') );
             } else {
-                setButtonIsFav( $div.find('.btn-fav') );
+                setButtonToFav( $div.find('.btn-fav') );
             }
 
             $div.data('m', m);
@@ -56,20 +56,20 @@ $('#results').on("click",".btn-fav",function(){
 
     if (itsFavorite(m.id)) {
         removeFav(m.id);
-        setButtonIsFav( $(this) );
+        setButtonToFav( $(this) );
     } else {
         addFav(m);
-        setButtonIsNotFavAnymore( $(this) );
+        setButtonToNotFavAnymore( $(this) );
     }
 });
 
 
-function setButtonIsFav($button) {
+function setButtonToFav($button) {
     $button.removeClass('btn-is-fav').find('i.fas').removeClass('fa-heart-broken').addClass('fa-heart');
     $button.find('span').text('Ajouter aux favoris');
 }
 
-function setButtonIsNotFavAnymore($button) {
+function setButtonToNotFavAnymore($button) {
     $button.addClass('btn-is-fav').find('i.fas').removeClass('fa-heart').addClass('fa-heart-broken');
     $button.find('span').text('Retirer des favoris');
 }

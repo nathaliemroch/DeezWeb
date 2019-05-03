@@ -1,37 +1,38 @@
-const removeText = "Retirer des favoris";
-const addText = "Ajouter aux favoris"
 
+function favMusic(music) {
+    return $(`<div class="song">
+    <img class="cover" src="${music.album_cover}">
+    <p class="title">${music.title}</p>
+    <p class="artiste">${music.artist}</p>
+    <p class="album">${music.album}</p>
+    <audio controls src="${music.preview}">Your browser does not support the<code>audio</code> element.</audio></div>`);
+}
 
-function onRemovefavorite(e) {
-    let $self = $(this);
-    $self.off("click", onRemovefavorite);
-    $self.on("click", e.data, onAddfavorite);
-    $self.html(addText);
-    let $parent = $self.parents("#favorites");
-    if ($parent.length > 0) {
-        $self.parent(".song").remove();
+function addFavToPage(parent, music) {
+    let favMusicHtml = favMusic(music);
+    parent.append(favMusicHtml);
+    $('audio').last().after(setButtonToFav(music));
+}
+
+class Fav {
+
+    constructor() {
+        this.view = "fav";
     }
-    removeFavorite(e.data.id);
-}
 
+    init() {
+        $(function () {
+            "use strict"
+            const $sectionFav = $("#favorites");
 
-function onAddfavorite(e) {
-    let $self = $(this);
-    $self.off("click", onAddfavorite);
-    $self.on("click", e.data, onRemovefavorite);
-    $self.html(removeText);
-    addFavorite(e.data);
-}
-
-
-function addFavoriteBtn(music) {
-    let btn = $('<button></button>');
-    if (isFavorite(music.id)) {
-        btn.html(removeText);
-        btn.on("click", music, onRemovefavorite);
-    } else {
-        btn.html(addText);
-        btn.on("click", music, onAddfavorite)
+            let musics = getFav();
+            if (musics.length > 0) {
+                for (let music of musics) {
+                    addFavToPage($sectionFav, music);
+                }
+            } else {
+                $sectionFav.html("Aucun favoris dans votre liste ...");
+            }
+        });
     }
-    return btn;
-}
+};
