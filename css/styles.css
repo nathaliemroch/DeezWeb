@@ -146,6 +146,9 @@ nav ul {
 
 /* Favoris */
 
+section#favorites {
+    text-align: center;
+}
 
 .song{
     border: 1px #e7e7e7 solid;
