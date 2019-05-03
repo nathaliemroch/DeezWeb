@@ -26,6 +26,7 @@ const album =
                             '<p class="album">' +
                                 '<img width="300px" src="'+ m.album.cover_big+ '"/>' + '<br>' +
                                 m.artist.name + ' : ' +
+                                m.title + '<br>' +
                                 m.album.title +
                             '</p><br>' +
                             '<p class="preview">' +

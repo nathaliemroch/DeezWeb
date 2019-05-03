@@ -2,7 +2,7 @@ $(document).ready(function () {
     let fav = JSON.parse(localStorage.getItem('deezweb:FavSongs')) || [];
     for (let m of fav) {
       $(`<div class="song">
-        <img class="cover" src="${m.album.cover}">
+        <img class="cover" src="${m.album.cover_big}">
         <p class="title">${m.title}</p>
         <p class="artiste">${m.artist.name}</p>
         <p class="album">${m.album.title}</p>
