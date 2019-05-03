@@ -45,6 +45,10 @@ nav ul {
     display: inline-flex;
 }
 
+nav .icon {
+    display: none;
+  }
+
 #welcome, #random, #search, #mesfav {
     width: 80%;
     margin: 60px auto;
@@ -206,3 +210,5 @@ audio {
 @media all and (max-width: 480px) { 
     
  } */
+
+ 
