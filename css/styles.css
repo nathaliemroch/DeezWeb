@@ -45,11 +45,10 @@ nav ul {
     display: inline-flex;
 }
 
-#welcome, #random, #search {
+#welcome, #random, #search, #mesfav {
     width: 80%;
     margin: 60px auto;
     text-align: center;
-}
 }
 
 /* Accueil */
@@ -146,9 +145,7 @@ nav ul {
 }
 
 /* Favoris */
-#mesfav {
-    margin: 30px;
-}
+
 
 .song{
     border: 1px #e7e7e7 solid;
