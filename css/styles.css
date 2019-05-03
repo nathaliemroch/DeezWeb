@@ -139,6 +139,35 @@ nav ul {
     text-align: center;
 }
 
+/* Favoris */
+
+.song{
+    border: 1px #e7e7e7 solid;
+    margin: 50px 20px 20px;
+    display: inline-block;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+}
+
+.title {
+    font-size: 20px;
+    padding-top: 10px;
+    padding-bottom: 4px;
+}
+
+.artist {
+    padding: 4px;
+    font-size: 16px;
+}
+
+.album {
+    padding-top: 4px;
+    padding-bottom: 10px;
+    font-size: 12px;
+}
+
+
 /* 
 @media screen and (max-width: 980px) { 
     .nav {

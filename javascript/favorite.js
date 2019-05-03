@@ -1,38 +1,29 @@
-
-function favMusic(music) {
-    return $(`<div class="song">
-    <img class="cover" src="${music.album_cover}">
-    <p class="title">${music.title}</p>
-    <p class="artiste">${music.artist}</p>
-    <p class="album">${music.album}</p>
-    <audio controls src="${music.preview}">Your browser does not support the<code>audio</code> element.</audio></div>`);
-}
-
-function addFavToPage(parent, music) {
-    let favMusicHtml = favMusic(music);
-    parent.append(favMusicHtml);
-    $('audio').last().after(setButtonToFav(music));
-}
-
-class Fav {
-
-    constructor() {
-        this.view = "fav";
+$(document).ready(function () {
+    let fav = JSON.parse(localStorage.getItem('deezweb:FavSongs')) || [];
+    for (let m of fav) {
+      $(`<div class="song">
+        <img class="cover" src="${m.album.cover}">
+        <p class="title">${m.title}</p>
+        <p class="artiste">${m.artist.name}</p>
+        <p class="album">${m.album.title}</p>
+        <audio controls src="${m.preview}"></audio></div>`
+        ).data('m', m).appendTo('#favorites');
     }
-
-    init() {
-        $(function () {
-            "use strict"
-            const $sectionFav = $("#favorites");
-
-            let musics = getFav();
-            if (musics.length > 0) {
-                for (let music of musics) {
-                    addFavToPage($sectionFav, music);
-                }
-            } else {
-                $sectionFav.html("Aucun favoris dans votre liste ...");
-            }
-        });
-    }
-};
+    
+    $("#favoris").on("click", ".btn-fav", function () {
+      let m = $(this).parents('.container').data('m');
+      
+      let fav = JSON.parse(localStorage.getItem('deezweb:FavSongs')) || [];
+      
+      for (let i = 0; i < fav.length; i++) {
+        if (fav[i].id === m.id) {
+          fav.splice(i, 1);
+          i--;
+        }
+      }
+  
+      localStorage.setItem('deezweb:FavSongs', JSON.stringify(fav));     
+    });
+});
+  
+          
